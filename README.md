@@ -1,6 +1,6 @@
 # sur-os &nbsp; [![bluebuild build badge](https://github.com/marek12306/sur-os/actions/workflows/build.yml/badge.svg)](https://github.com/marek12306/sur-os/actions/workflows/build.yml)
 
-Image for personal use, based on ublue-os/main.
+Image for personal use, based on ublue-os/silverblue-main.
 
 ## Installation
 
