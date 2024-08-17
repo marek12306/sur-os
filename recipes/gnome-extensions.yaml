@@ -1,5 +1,0 @@
-type: gnome-extensions
-install:
-  - Blur my Shell
-  - AppIndicator and KStatusNotifierItem Support
-  - 307

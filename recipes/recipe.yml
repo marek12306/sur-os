@@ -10,7 +10,19 @@ modules:
       - source: system
         destination: /
 
-  - from-file: packages.yaml
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    install:
+      - starship
+      - yad
+      - dialog
+      - podman-compose
+      - virt-install
+      - virt-manager
+    remove:
+      - firefox
+      - firefox-langpacks
 
   - type: akmods
     install:
@@ -27,8 +39,26 @@ modules:
       enabled:
         - libvirtd.service
 
-  - from-file: flatpaks.yaml
-  - from-file: gnome-extensions.yaml
+  - type: default-flatpaks
+    notify: true
+    system:
+      install:
+        - org.gnome.FileRoller
+        - app.devsuite.Ptyxis
+        - com.bitwarden.desktop
+        - com.github.tchx84.Flatseal
+        - com.mattjakeman.ExtensionManager
+        - com.usebottles.bottles
+        - com.visualstudio.code
+        - io.github.celluloid_player.Celluloid
+        - io.github.peazip.PeaZip
+        - org.chromium.Chromium
+
+  - type: gnome-extensions
+    install:
+      - Blur my Shell
+      - AppIndicator and KStatusNotifierItem Support
+      - 307
 
   - type: brew
     nofile-limits: true
