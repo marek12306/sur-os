@@ -24,6 +24,7 @@ modules:
       - virt-install
       - virt-manager
       - code
+      - direnv
     remove:
       - firefox
       - firefox-langpacks
