@@ -28,6 +28,10 @@ modules:
       - firefox
       - firefox-langpacks
 
+  - type: bling
+    install:
+      - ublue-update
+
   - type: akmods
     install:
       - v4l2loopback
