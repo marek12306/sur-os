@@ -61,6 +61,9 @@ modules:
         - io.github.celluloid_player.Celluloid
         - io.github.peazip.PeaZip
         - org.chromium.Chromium
+        - org.gnome.TextEditor
+        - org.gnome.baobab # Disk usage
+        - org.gnome.Calculator
 
   - type: gnome-extensions
     install:
