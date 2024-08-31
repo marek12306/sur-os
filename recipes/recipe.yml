@@ -72,8 +72,4 @@ modules:
       - AppIndicator and KStatusNotifierItem Support
       - 307
 
-  - type: brew
-    nofile-limits: true
-    brew-analytics: false
-
   - type: signing
