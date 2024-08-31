@@ -29,9 +29,9 @@ modules:
       - firefox
       - firefox-langpacks
 
-  - type: bling
-    install:
-      - ublue-update
+  # - type: bling
+  #   install:
+  #     - ublue-update
 
   - type: akmods
     install:
