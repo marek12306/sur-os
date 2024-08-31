@@ -25,6 +25,7 @@ modules:
       - virt-manager
       - code
       - direnv
+      - yt-dlp
     remove:
       - firefox
       - firefox-langpacks
