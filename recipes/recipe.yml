@@ -71,5 +71,6 @@ modules:
       - Blur my Shell
       - AppIndicator and KStatusNotifierItem Support
       - 307
+      - 5489 # Search Light
 
   - type: signing
