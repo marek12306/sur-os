@@ -72,5 +72,6 @@ modules:
       - 615  # AppIndicator and KStatusNotifierItem Support
       - 307  # Dash to Dock
       - 5489 # Search Light
+      - 1319 # GSConnect
 
   - type: signing
