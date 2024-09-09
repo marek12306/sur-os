@@ -27,6 +27,7 @@ modules:
       - direnv
       - yt-dlp
       - hunspell
+      - xonsh
     remove:
       - firefox
       - firefox-langpacks
