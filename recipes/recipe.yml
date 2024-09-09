@@ -28,6 +28,7 @@ modules:
       - yt-dlp
       - hunspell
       - xonsh
+      - python3-pip
     remove:
       - firefox
       - firefox-langpacks
