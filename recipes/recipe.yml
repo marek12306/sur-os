@@ -79,4 +79,8 @@ modules:
       - 5489 # Search Light
       - 1319 # GSConnect
 
+  - type: justfiles
+    include:
+      hm-update.just
+
   - type: signing
