@@ -1,9 +1,9 @@
-hm-path := "~/.config/home-manager"
+hmpath := "~/.config/home-manager"
 
 # Update home-manager
 [no-cd]
 hm-update:
-        pushd $hm-path
+        pushd $hmpath
         nix flake update
         popd
         home-manager switch
