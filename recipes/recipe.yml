@@ -13,7 +13,6 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
       - vscode.repo
     keys:
       - https://packages.microsoft.com/keys/microsoft.asc
@@ -30,12 +29,16 @@ modules:
       - hunspell
       - python3-pip
       - tailscale
-      - zerotier-one
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
       - https://h30326.www3.hpe.com/hpn/via-4.7.0.2404092-rpm.x86_64.rpm?merchantId=ASP_DROPBOX
       - https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm
     remove:
       - firefox
       - firefox-langpacks
+
+  - type: rpm-ostree
+    install:
+      - zerotier-one
 
   # - type: bling
   #   install:
