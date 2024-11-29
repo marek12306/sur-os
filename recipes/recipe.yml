@@ -2,7 +2,7 @@ name: sur-os
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 40
+image-version: 41
 
 modules:
   - type: files
