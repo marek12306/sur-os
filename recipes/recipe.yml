@@ -62,7 +62,7 @@ modules:
     system:
       enabled:
         - libvirtd.service
-        - scx.service
+        - scx_loader.service
 
   - type: default-flatpaks
     notify: true
