@@ -64,6 +64,9 @@ modules:
       enabled:
         - libvirtd.service
         - scx_loader.service
+    user:
+      enabled:
+        - podman.service
 
   - type: default-flatpaks
     notify: true
