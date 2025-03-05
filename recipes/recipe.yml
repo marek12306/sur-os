@@ -33,7 +33,6 @@ modules:
       - python3-pip
       - tailscale
       - scx-scheds
-      - podman
       - podman-docker
       - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
       - https://h30326.www3.hpe.com/hpn/via-4.7.0.2404092-rpm.x86_64.rpm?merchantId=ASP_DROPBOX
