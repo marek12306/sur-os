@@ -91,6 +91,7 @@ modules:
       - 307 # Dash to Dock
       - 5489 # Search Light
       - 1319 # GSConnect
+      - 6099 # PaperWM
 
   - type: justfiles
     include:
