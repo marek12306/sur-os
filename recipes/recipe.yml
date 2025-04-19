@@ -40,9 +40,9 @@ modules:
       - firefox
       - firefox-langpacks
 
-  - type: rpm-ostree
-    install:
-      - zerotier-one
+  # - type: rpm-ostree
+  #  install:
+  #    - zerotier-one
 
   # - type: bling
   #   install:
