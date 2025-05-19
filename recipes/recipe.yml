@@ -33,7 +33,6 @@ modules:
         - code
         - direnv
         - yt-dlp
-        - hunspell
         - python3-pip
         - tailscale
         - scx-scheds
