@@ -17,6 +17,8 @@ modules:
       copr:
         - atim/starship
         - bieszczaders/kernel-cachyos-addons
+        - yalter/niri
+        - ulysg/xwayland-satellite
       files:
         - vscode.repo
       keys:
