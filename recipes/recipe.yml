@@ -53,6 +53,7 @@ modules:
         - swaylock
         - brightnessctl
         - pavucontrol
+        - nm-applet
     remove:
       packages:
         - firefox
