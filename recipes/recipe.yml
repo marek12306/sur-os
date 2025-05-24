@@ -54,6 +54,8 @@ modules:
         - brightnessctl
         - pavucontrol
         - nm-applet
+        - wdisplays
+        - libglvnd-gles
     remove:
       packages:
         - firefox
