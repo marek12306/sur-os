@@ -104,6 +104,10 @@ modules:
         - org.gnome.TextEditor
         - org.gnome.baobab # Disk usage
         - org.gnome.Calculator
+        - dev.qwery.AddWater # GUI for installing Firefox Adwaita theme
+        - io.github.dvlv.boxbuddyrs
+        - org.gnome.Loupe # Image viewer
+        - dev.vencord.Vesktop
 
   - type: gnome-extensions
     install:
