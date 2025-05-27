@@ -94,7 +94,6 @@ modules:
     system:
       install:
         - org.gnome.FileRoller
-        - app.devsuite.Ptyxis
         - com.bitwarden.desktop
         - com.github.tchx84.Flatseal
         - com.mattjakeman.ExtensionManager
