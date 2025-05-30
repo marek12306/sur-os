@@ -20,10 +20,6 @@ modules:
         - yalter/niri
         - ulysg/xwayland-satellite
         - erikreider/SwayNotificationCenter
-      files:
-        - vscode.repo
-      keys:
-        - https://packages.microsoft.com/keys/microsoft.asc
       nonfree: rpmfusion
     install:
       packages:
@@ -33,7 +29,6 @@ modules:
         - podman-compose
         - virt-install
         - virt-manager
-        - code
         - direnv
         - yt-dlp
         - python3-pip
@@ -108,6 +103,7 @@ modules:
         - io.github.dvlv.boxbuddyrs
         - org.gnome.Loupe # Image viewer
         - dev.vencord.Vesktop
+        - com.visualstudio.code
 
   - type: gnome-extensions
     install:
