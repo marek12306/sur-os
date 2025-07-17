@@ -52,6 +52,7 @@ modules:
         # - wdisplays
         - libglvnd-gles
         # - blueman
+        - intel-media-driver
     remove:
       packages:
         - firefox
