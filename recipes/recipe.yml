@@ -102,7 +102,7 @@ modules:
         - org.gnome.baobab # Disk usage
         - org.gnome.Calculator
         - dev.qwery.AddWater # GUI for installing Firefox Adwaita theme
-        - io.github.dvlv.boxbuddyrs
+        - com.ranfdev.DistroShelf
         - org.gnome.Loupe # Image viewer
         - dev.vencord.Vesktop
         - com.visualstudio.code
