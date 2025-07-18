@@ -33,7 +33,7 @@ modules:
         - yt-dlp
         - python3-pip
         - tailscale
-        - scx-scheds
+        # - scx-scheds
         - podman-docker
         - gnome-shell-extension-appindicator
         - lm_sensors
@@ -81,7 +81,7 @@ modules:
     system:
       enabled:
         - libvirtd.service
-        - scx_loader.service
+        # - scx_loader.service
     user:
       enabled:
         - podman.service
