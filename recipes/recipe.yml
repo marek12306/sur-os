@@ -53,6 +53,7 @@ modules:
         - libglvnd-gles
         # - blueman
         - intel-media-driver
+        - android-tools
     remove:
       packages:
         - firefox
