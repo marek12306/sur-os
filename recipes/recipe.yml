@@ -38,6 +38,10 @@ modules:
         # - scx-scheds
         - podman-docker
         - gnome-shell-extension-appindicator
+        - gnome-shell-extension-gsconnect
+        - nautilus-gsconnect
+        - nemo-gsconnect
+        - webextension-gsconnect
         - lm_sensors
         - https://h30326.www3.hpe.com/hpn/via-4.7.0.2404092-rpm.x86_64.rpm?merchantId=ASP_DROPBOX
         # - niri
@@ -116,7 +120,7 @@ modules:
       - 3193 # Blur my Shell
       # - 615 # AppIndicator and KStatusNotifierItem Support
       - 307 # Dash to Dock
-      - 1319 # GSConnect
+      # - 1319 # GSConnect
       - 6099 # PaperWM
 
   - type: justfiles
