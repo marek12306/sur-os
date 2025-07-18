@@ -21,6 +21,8 @@ modules:
         - ulysg/xwayland-satellite
         - erikreider/SwayNotificationCenter
       nonfree: rpmfusion
+      files:
+        - netbird.repo
     install:
       packages:
         - starship
@@ -54,6 +56,7 @@ modules:
         # - blueman
         - intel-media-driver
         - android-tools
+        - netbird-ui
     remove:
       packages:
         - firefox
