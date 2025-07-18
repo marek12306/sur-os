@@ -85,6 +85,7 @@ modules:
       enabled:
         - libvirtd.service
         # - scx_loader.service
+        - netbird.service
     user:
       enabled:
         - podman.service
