@@ -23,6 +23,9 @@ modules:
       nonfree: rpmfusion
       files:
         - netbird.repo
+        - vscode.repo
+      keys:
+        - https://packages.microsoft.com/keys/microsoft.asc
     install:
       packages:
         - starship
@@ -60,6 +63,7 @@ modules:
         - intel-media-driver
         - android-tools
         - netbird-ui
+        - code
     remove:
       packages:
         - firefox
@@ -112,7 +116,7 @@ modules:
         - com.ranfdev.DistroShelf
         - org.gnome.Loupe # Image viewer
         - dev.vencord.Vesktop
-        - com.visualstudio.code
+        # - com.visualstudio.code
 
   - type: gnome-extensions
     install:
