@@ -98,25 +98,26 @@ modules:
         - podman.service
 
   - type: default-flatpaks
-    notify: true
-    system:
-      install:
-        - org.gnome.FileRoller
-        - com.bitwarden.desktop
-        - com.github.tchx84.Flatseal
-        - com.mattjakeman.ExtensionManager
-        - com.usebottles.bottles
-        - io.github.celluloid_player.Celluloid
-        - io.github.peazip.PeaZip
-        - org.chromium.Chromium
-        - org.gnome.TextEditor
-        - org.gnome.baobab # Disk usage
-        - org.gnome.Calculator
-        - dev.qwery.AddWater # GUI for installing Firefox Adwaita theme
-        - com.ranfdev.DistroShelf
-        - org.gnome.Loupe # Image viewer
-        - dev.vencord.Vesktop
-        # - com.visualstudio.code
+    configurations:
+      - scope: system
+        notify: true
+        install:
+          - org.gnome.FileRoller
+          - com.bitwarden.desktop
+          - com.github.tchx84.Flatseal
+          - com.mattjakeman.ExtensionManager
+          - com.usebottles.bottles
+          - io.github.celluloid_player.Celluloid
+          - io.github.peazip.PeaZip
+          - org.chromium.Chromium
+          - org.gnome.TextEditor
+          - org.gnome.baobab # Disk usage
+          - org.gnome.Calculator
+          - dev.qwery.AddWater # GUI for installing Firefox Adwaita theme
+          - com.ranfdev.DistroShelf
+          - org.gnome.Loupe # Image viewer
+          - dev.vencord.Vesktop
+          # - com.visualstudio.code
 
   - type: gnome-extensions
     install:
