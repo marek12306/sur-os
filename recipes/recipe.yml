@@ -20,6 +20,7 @@ modules:
         - yalter/niri
         - ulysg/xwayland-satellite
         - erikreider/SwayNotificationCenter
+        - cboxdoerfer/fsearch
       nonfree: rpmfusion
       files:
         - netbird.repo
@@ -64,6 +65,7 @@ modules:
         - android-tools
         - netbird-ui
         - code
+        - fsearch
     remove:
       packages:
         - firefox
