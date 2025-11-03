@@ -124,7 +124,7 @@ modules:
 
   - type: gnome-extensions
     install:
-      - 3193 # Blur my Shell
+      # - 3193 # Blur my Shell
       # - 615 # AppIndicator and KStatusNotifierItem Support
       - 307 # Dash to Dock
       # - 1319 # GSConnect
