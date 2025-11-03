@@ -23,7 +23,7 @@ modules:
         - cboxdoerfer/fsearch
       nonfree: rpmfusion
       files:
-        - netbird.repo
+        # - netbird.repo
         - vscode.repo
       keys:
         - https://packages.microsoft.com/keys/microsoft.asc
@@ -63,7 +63,7 @@ modules:
         # - blueman
         - intel-media-driver
         - android-tools
-        - netbird-ui
+        # - netbird-ui
         - code
         - fsearch
     remove:
@@ -95,7 +95,7 @@ modules:
       enabled:
         - libvirtd.service
         # - scx_loader.service
-        - netbird.service
+        # - netbird.service
     user:
       enabled:
         - podman.service
