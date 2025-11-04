@@ -21,6 +21,7 @@ modules:
         - ulysg/xwayland-satellite
         - erikreider/SwayNotificationCenter
         - cboxdoerfer/fsearch
+        - trixieua/morewaita-icon-theme
       nonfree: rpmfusion
       files:
         # - netbird.repo
@@ -66,6 +67,7 @@ modules:
         # - netbird-ui
         - code
         - fsearch
+        - morewaita-icon-theme
     remove:
       packages:
         - firefox
