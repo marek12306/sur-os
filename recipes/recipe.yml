@@ -69,6 +69,7 @@ modules:
         - fsearch
         - morewaita-icon-theme
         - gns3-gui
+        - bridge-utils
     remove:
       packages:
         - firefox
