@@ -138,6 +138,13 @@ modules:
       - 7867 # App Grid Wizard
       - 8276 # Kiwi is not Apple
 
+  - type: gschema-overrides
+    include:
+      - blur-my-shell.gschema.override
+      - dash-to-dock.gschema.override
+      - kiwi.gschema.override
+
+
   - type: justfiles
     include:
       - hm-update.just
