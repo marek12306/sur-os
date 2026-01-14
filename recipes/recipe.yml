@@ -125,6 +125,12 @@ modules:
           - org.gnome.Loupe # Image viewer
           - dev.vencord.Vesktop
           # - com.visualstudio.code
+          - app.zen_browser.zen
+          - com.github.marhkb.Pods
+          - io.github.flattool.Warehouse
+          - io.github.kolunmi.Bazaar
+          - io.github.seadve.Kooha
+          - org.audacityteam.Audacity
 
   - type: gnome-extensions
     install:
