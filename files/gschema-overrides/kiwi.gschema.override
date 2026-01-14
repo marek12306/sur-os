@@ -1,0 +1,17 @@
+[org/gnome/shell/extensions/kiwi]
+add-username-to-quick-menu=false
+battery-percentage=false
+button-type='titlebuttons'
+enable-app-window-buttons=false
+enable-launchpad-app=false
+hide-activities-button=true
+hide-keyboard-indicator=false
+keyboard-indicator=true
+lock-icon=true
+move-calendar-right=true
+move-window-to-new-workspace=false
+overview-wallpaper-background=false
+panel-hover-fullscreen=true
+panel-opaque-on-window=true
+show-window-controls=false
+transparent-move=false
