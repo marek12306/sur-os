@@ -22,6 +22,7 @@ modules:
         - erikreider/SwayNotificationCenter
         - cboxdoerfer/fsearch
         - trixieua/morewaita-icon-theme
+        - killcrb/ashell
       nonfree: rpmfusion
       files:
         # - netbird.repo
@@ -48,20 +49,20 @@ modules:
         - webextension-gsconnect
         - lm_sensors
         - https://h30326.www3.hpe.com/hpn/via-4.7.0.2404092-rpm.x86_64.rpm?merchantId=ASP_DROPBOX
-        # - niri
+        - niri
         # - fuzzel
-        # - SwayNotificationCenter
+        - SwayNotificationCenter
         # - waybar
-        # - swaybg
+        - swaybg
         # - xwayland-satellite
-        # - swayidle
-        # - swaylock
-        # - brightnessctl
+        - swayidle
+        - swaylock
+        - brightnessctl
         - pavucontrol
-        # - nm-applet
-        # - wdisplays
+        - nm-applet
+        - wdisplays
         - libglvnd-gles
-        # - blueman
+        - blueman
         - intel-media-driver
         - android-tools
         # - netbird-ui
@@ -70,6 +71,7 @@ modules:
         - morewaita-icon-theme
         - gns3-gui
         - bridge-utils
+        - ashell
     remove:
       packages:
         - firefox
