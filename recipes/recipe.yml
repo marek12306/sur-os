@@ -73,6 +73,7 @@ modules:
         - bridge-utils
         # - ashell
         - plocate
+        - qalculate-gtk
     remove:
       packages:
         - firefox
