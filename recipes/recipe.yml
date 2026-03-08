@@ -75,6 +75,7 @@ modules:
         - plocate
         - qalculate
         - waydroid
+        - lzip
     remove:
       packages:
         - firefox
