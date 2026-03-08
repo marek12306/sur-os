@@ -74,6 +74,7 @@ modules:
         # - ashell
         - plocate
         - qalculate
+        - waydroid
     remove:
       packages:
         - firefox
