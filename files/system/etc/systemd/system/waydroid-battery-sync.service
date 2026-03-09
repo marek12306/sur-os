@@ -1,0 +1,12 @@
+[Unit]
+Description=Waydroid Battery Sync Service (Event-Driven)
+After=waydroid-container.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/waydroid-battery-sync
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

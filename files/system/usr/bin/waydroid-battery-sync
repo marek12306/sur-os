@@ -1,0 +1,41 @@
+#!/bin/bash
+
+BAT_PATH="/sys/class/power_supply/BAT0"
+
+sync_battery() {
+    if waydroid status | grep -q "RUNNING"; then
+        LEVEL=$(cat "$BAT_PATH/capacity")
+        STATUS=$(cat "$BAT_PATH/status")
+        
+        case "$STATUS" in
+            "Charging")
+                ANDROID_STATUS=2
+                POWER=1
+                ;;
+            "Discharging")
+                ANDROID_STATUS=3
+                POWER=0
+                ;;
+            "Full")
+                ANDROID_STATUS=5
+                POWER=1
+                ;;
+            *)
+                ANDROID_STATUS=1
+                POWER=0
+                ;;
+        esac
+
+        waydroid shell dumpsys battery set level "$LEVEL" >/dev/null 2>&1
+        waydroid shell dumpsys battery set status "$ANDROID_STATUS" >/dev/null 2>&1
+        waydroid shell dumpsys battery set ac "$POWER" >/dev/null 2>&1
+        waydroid shell dumpsys battery set usb "$POWER" >/dev/null 2>&1
+    fi
+}
+
+sync_battery
+
+udevadm monitor --subsystem-match=power_supply | while read -r event; do
+    sync_battery
+done
+

@@ -106,6 +106,7 @@ modules:
         - libvirtd.service
         # - scx_loader.service
         # - netbird.service
+        - waydroid-battery-sync.service
     user:
       enabled:
         - podman.service
