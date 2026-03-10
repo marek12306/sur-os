@@ -76,6 +76,7 @@ modules:
         - qalculate
         - waydroid
         - lzip
+        - unicode-ucd
     remove:
       packages:
         - firefox
