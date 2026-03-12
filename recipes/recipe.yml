@@ -23,6 +23,7 @@ modules:
         - cboxdoerfer/fsearch
         - trixieua/morewaita-icon-theme
         - killcrb/ashell
+        - marek12306/soteria
       nonfree: rpmfusion
       files:
         # - netbird.repo
@@ -77,6 +78,7 @@ modules:
         - waydroid
         - lzip
         - unicode-ucd
+        - soteria
     remove:
       packages:
         - firefox
