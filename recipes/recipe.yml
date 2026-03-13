@@ -24,6 +24,7 @@ modules:
         - trixieua/morewaita-icon-theme
         - killcrb/ashell
         - marek12306/soteria
+        - marek12306/ashell
       nonfree: rpmfusion
       files:
         # - netbird.repo
@@ -72,7 +73,7 @@ modules:
         - morewaita-icon-theme
         - gns3-gui
         - bridge-utils
-        # - ashell
+        - ashell
         - plocate
         - qalculate
         - waydroid
