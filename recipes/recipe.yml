@@ -25,6 +25,7 @@ modules:
         - killcrb/ashell
         - marek12306/soteria
         - marek12306/ashell
+        - marek12306/applaunch
       nonfree: rpmfusion
       files:
         # - netbird.repo
@@ -80,6 +81,7 @@ modules:
         - lzip
         - unicode-ucd
         - soteria
+        - applaunch
     remove:
       packages:
         - firefox
