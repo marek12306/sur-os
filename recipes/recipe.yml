@@ -82,6 +82,7 @@ modules:
         - unicode-ucd
         - soteria
         - applaunch
+        - inotify-tools
     remove:
       packages:
         - firefox
