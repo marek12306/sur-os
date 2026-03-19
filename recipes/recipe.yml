@@ -83,6 +83,7 @@ modules:
         - soteria
         - applaunch
         - inotify-tools
+        - dbus-tools
     remove:
       packages:
         - firefox
