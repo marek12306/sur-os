@@ -2,40 +2,77 @@
 
 BAT_PATH="/sys/class/power_supply/BAT0"
 
-sync_battery() {
-    if waydroid status | grep -q "RUNNING"; then
-        LEVEL=$(cat "$BAT_PATH/capacity")
-        STATUS=$(cat "$BAT_PATH/status")
-        
-        case "$STATUS" in
-            "Charging")
-                ANDROID_STATUS=2
-                POWER=1
-                ;;
-            "Discharging")
-                ANDROID_STATUS=3
-                POWER=0
-                ;;
-            "Full")
-                ANDROID_STATUS=5
-                POWER=1
-                ;;
-            *)
-                ANDROID_STATUS=1
-                POWER=0
-                ;;
-        esac
-
-        waydroid shell dumpsys battery set level "$LEVEL" >/dev/null 2>&1
-        waydroid shell dumpsys battery set status "$ANDROID_STATUS" >/dev/null 2>&1
-        waydroid shell dumpsys battery set ac "$POWER" >/dev/null 2>&1
-        waydroid shell dumpsys battery set usb "$POWER" >/dev/null 2>&1
-    fi
+is_waydroid_running() {
+    lxc-info -P /var/lib/waydroid/lxc -n waydroid -s 2>/dev/null | grep -q "RUNNING"
 }
 
-sync_battery
+sync_battery() {
+    LEVEL=$(cat "$BAT_PATH/capacity")
+    STATUS=$(cat "$BAT_PATH/status")
+    
+    case "$STATUS" in
+        "Charging") ANDROID_STATUS=2; POWER=1 ;;
+        "Discharging") ANDROID_STATUS=3; POWER=0 ;;
+        "Full") ANDROID_STATUS=5; POWER=1 ;;
+        *) ANDROID_STATUS=1; POWER=0 ;;
+    esac
 
-udevadm monitor --subsystem-match=power_supply | while read -r event; do
+    lxc-attach -P /var/lib/waydroid/lxc -n waydroid -- sh -c "dumpsys battery set level $LEVEL && dumpsys battery set status $ANDROID_STATUS && dumpsys battery set ac $POWER && dumpsys battery set usb $POWER" >/dev/null 2>&1
+}
+
+monitor_waydroid() {
+    stdbuf -oL lxc-monitor -P /var/lib/waydroid/lxc -n waydroid |
+    while read -r line; do
+        if echo "$line" | grep -q "RUNNING"; then
+            while [ "$(lxc-attach -P /var/lib/waydroid/lxc -n waydroid -- getprop sys.boot_completed 2>/dev/null | tr -d '\r')" != "1" ]; do
+                sleep 5
+            done
+            
+            sync_battery
+        fi
+    done
+}
+
+monitor_battery_level() {
+    local last_level="-1"
+    while true; do
+        if is_waydroid_running; then
+            local current_level=$(cat "$BAT_PATH/capacity" 2>/dev/null)
+            if [ "$current_level" != "$last_level" ] && [ -n "$current_level" ]; then
+                if [ "$last_level" != "-1" ]; then
+                    sync_battery
+                fi
+                last_level="$current_level"
+            fi
+        fi
+        sleep 60
+    done
+}
+
+monitor_waydroid &
+
+if is_waydroid_running; then
     sync_battery
-done
+fi
 
+LAST_LEVEL=""
+LAST_STATUS=""
+
+stdbuf -oL upower --monitor |
+while read -r line; do
+    if [[ "$line" == *"changed"* ]] && [[ "$line" == *"battery"* || "$line" == *"power"* ]]; then
+        sleep 0.2
+
+        CURRENT_LEVEL=$(cat "$BAT_PATH/capacity" 2>/dev/null)
+        CURRENT_STATUS=$(cat "$BAT_PATH/status" 2>/dev/null)
+
+        if [[ "$CURRENT_LEVEL" != "$LAST_LEVEL" || "$CURRENT_STATUS" != "$LAST_STATUS" ]]; then
+            if is_waydroid_running; then
+                sync_battery
+            fi
+
+            LAST_LEVEL="$CURRENT_LEVEL"
+            LAST_STATUS="$CURRENT_STATUS"
+        fi
+    fi
+done
