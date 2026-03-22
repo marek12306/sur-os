@@ -86,6 +86,7 @@ modules:
         - inotify-tools
         - dbus-tools
         - swayosd
+        - squeekboard
     remove:
       packages:
         - firefox
