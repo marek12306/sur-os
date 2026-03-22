@@ -86,7 +86,7 @@ modules:
         - inotify-tools
         - dbus-tools
         - swayosd
-        - squeekboard
+        - maliit-keyboard
     remove:
       packages:
         - firefox
