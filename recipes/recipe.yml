@@ -20,6 +20,7 @@ modules:
         - yalter/niri
         - ulysg/xwayland-satellite
         - erikreider/SwayNotificationCenter
+        - erikreider/swayosd
         - cboxdoerfer/fsearch
         - trixieua/morewaita-icon-theme
         - killcrb/ashell
@@ -84,6 +85,7 @@ modules:
         - applaunch
         - inotify-tools
         - dbus-tools
+        - swayosd
     remove:
       packages:
         - firefox
