@@ -100,11 +100,13 @@ modules:
         - zerotier-one
 
 
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - copr:copr.fedorainfracloud.org/sihawken/akmod-i915-sriov
+      copr:
+        - sihawken/akmod-i915-sriov
     install:
-      - akmod-i915-sriov
+      packages:
+        - akmod-i915-sriov
 
   # - type: bling
   #   install:
