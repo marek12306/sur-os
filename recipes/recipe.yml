@@ -99,6 +99,13 @@ modules:
       packages:
         - zerotier-one
 
+
+  - type: rpm-ostree
+    repos:
+      - copr:copr.fedorainfracloud.org/sihawken/akmod-i915-sriov
+    install:
+      - akmod-i915-sriov
+
   # - type: bling
   #   install:
   #     - ublue-update
