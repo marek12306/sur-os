@@ -170,6 +170,7 @@ modules:
       - dash-to-dock.gschema.override
       - kiwi.gschema.override
 
+  - type: initramfs
 
   - type: justfiles
     include:
