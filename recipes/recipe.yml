@@ -99,23 +99,6 @@ modules:
       packages:
         - zerotier-one
 
-  # SOME EVIL WEIRD CLANKER HACKS AHEAD
-  # i hope ts works v4
-  - type: script
-    snippets:
-      - dnf install -y akmods sysfsutils rpm-build patch curl tar
-      - dnf copr enable -y sihawken/akmod-i915-sriov
-      - dnf install -y --setopt=tsflags=noscripts akmod-i915-sriov
-      - rpm -Uvh /usr/src/akmods/i915-sriov-kmod*.src.rpm
-      - ls -la /root/rpmbuild/SOURCES/
-      - cd /root/rpmbuild/SOURCES && TAR_FILE=$(ls *.tar.* *.tgz 2>/dev/null | head -n 1) && mkdir patch_workspace && tar -xf $TAR_FILE -C patch_workspace && cd patch_workspace/* && curl -sL https://github.com/strongtz/i915-sriov-dkms/commit/60b7dbdd4f2d6b3ba625599856c77bdfd322bed8.patch | patch -p1 && cd .. && tar -caf ../$TAR_FILE *
-      - rpmbuild -bs /root/rpmbuild/SPECS/*.spec
-      - mkdir -p /tmp/akmods-build
-      - cp /root/rpmbuild/SRPMS/i915-sriov-kmod*.src.rpm /tmp/akmods-build/
-      - chown -R akmods:akmods /tmp/akmods-build
-      - KERNEL_VERSION=$(ls /lib/modules | grep -E '^[0-9]\.' | head -n 1) && cd /tmp/akmods-build && su -s /bin/bash akmods -c "akmodsbuild --kernels ${KERNEL_VERSION} /tmp/akmods-build/i915-sriov-kmod*.src.rpm"
-      - dnf install -y /tmp/akmods-build/*.rpm
-
   # - type: bling
   #   install:
   #     - ublue-update
