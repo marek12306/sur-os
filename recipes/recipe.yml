@@ -4,7 +4,7 @@ name: sur-os
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 44
+image-version: 43
 
 modules:
   - type: files
@@ -86,7 +86,7 @@ modules:
         - inotify-tools
         - dbus-tools
         - swayosd
-        # - https://kojipkgs.fedoraproject.org//packages/squeekboard/1.43.1/8.fc43/x86_64/squeekboard-1.43.1-8.fc43.x86_64.rpm
+        - https://kojipkgs.fedoraproject.org//packages/squeekboard/1.43.1/8.fc43/x86_64/squeekboard-1.43.1-8.fc43.x86_64.rpm
         - glew
         - libinput-utils
     remove:
