@@ -99,27 +99,17 @@ modules:
       packages:
         - zerotier-one
 
-
-  - type: dnf
-    repos:
-      copr:
-        - sihawken/akmod-i915-sriov
-    install:
-      packages:
-        - akmods
-        - sysfsutils
-
   # SOME EVIL WEIRD CLANKER HACKS AHEAD
-  # i hope ts works v2
+  # i hope ts works v3
   - type: script
     snippets:
+      - dnf install -y akmods sysfsutils
+      - dnf copr enable -y sihawken/akmod-i915-sriov
       - dnf install -y --setopt=tsflags=noscripts akmod-i915-sriov
-
-  - type: script
-    snippets:
-      - chown -R akmods:akmods /usr/src/akmods
-      - KERNEL_VERSION=$(ls /lib/modules | grep -E '^[0-9]\.' | head -n 1) && su -s /bin/bash akmods -c "akmods --force --kernels ${KERNEL_VERSION}"
-      - find /var/cache/akmods/ -name "*.rpm" -exec rpm -Uvh {} \;
+      - mkdir -p /tmp/akmods-build
+      - chown -R akmods:akmods /usr/src/akmods /tmp/akmods-build
+      - KERNEL_VERSION=$(ls /lib/modules | grep -E '^[0-9]\.' | head -n 1) && cd /tmp/akmods-build && su -s /bin/bash akmods -c "akmodsbuild --kernels ${KERNEL_VERSION} /usr/src/akmods/i915-sriov-kmod*.src.rpm"
+      - dnf install -y /tmp/akmods-build/*.rpm
 
   # - type: bling
   #   install:
