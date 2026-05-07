@@ -161,7 +161,7 @@ modules:
       - 6099 # PaperWM
       - 8692 # In Picture
       - 517 # Caffeine
-      - 7867 # App Grid Wizard
+      # - 7867 # App Grid Wizard
       - 8276 # Kiwi is not Apple
 
   - type: gschema-overrides
