@@ -103,9 +103,9 @@ modules:
   #   install:
   #     - ublue-update
 
-  # - type: akmods
-  #   install:
-  #     - v4l2loopback
+  - type: akmods
+    install:
+      - kvmfr
 
   - type: fonts
     fonts:
