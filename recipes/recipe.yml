@@ -4,7 +4,7 @@ name: sur-os
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 43
+image-version: 44
 
 modules:
   - type: files
@@ -20,10 +20,10 @@ modules:
         - yalter/niri
         - ulysg/xwayland-satellite
         - erikreider/SwayNotificationCenter
-        - erikreider/swayosd
+        # - erikreider/swayosd
+        - phynecs/swayosd 
         - cboxdoerfer/fsearch
         - trixieua/morewaita-icon-theme
-        - killcrb/ashell
         - marek12306/soteria
         - marek12306/ashell
         - marek12306/applaunch
