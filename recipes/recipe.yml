@@ -119,15 +119,6 @@ modules:
   
   # SOME EVIL WEIRD CLANKER HACKS AHEAD
   # i hope ts works v5
-  - type: dnf
-    repos:
-      copr:
-        - marek12306/akmod-i915-sriov
-    install:
-      packages:
-        - akmods
-        - sysfsutils
-
   - type: script
     scripts:
       - i915-sriov.sh
