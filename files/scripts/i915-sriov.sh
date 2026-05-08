@@ -49,3 +49,8 @@ su -s /bin/bash akmods -c "akmodsbuild --kernels ${KERNEL_VERSION} /tmp/akmods-b
 
 dnf install -y /root/rpmbuild/RPMS/noarch/i915-sriov-kmod-common*.rpm /tmp/akmods-build/kmod-i915-sriov-*.rpm --setopt=tsflags=noscripts
 
+mkdir -p /etc/depmod.d
+echo "search extra" > /etc/depmod.d/kmod-i915-sriov.conf
+echo "override i915 * extra/i915-sriov/" >> /etc/depmod.d/kmod-i915-sriov.conf
+depmod -a ${KERNEL_VERSION}
+
