@@ -16,6 +16,7 @@ SHORT_COMMIT=${LATEST_COMMIT:0:7}
 
 sed -i "s/%global commit .*/%global commit $LATEST_COMMIT/" /root/rpmbuild/SPECS/*.spec
 sed -i "s/%global shortcommit .*/%global shortcommit $SHORT_COMMIT/" /root/rpmbuild/SPECS/*.spec
+sed -i 's|drivers/gpu/drm/i915/\*.ko|drivers/gpu/drm/i915/*.ko _kmod_build_${kernel_version%%___*}/compat/*.ko|g' /root/rpmbuild/SPECS/*.spec
 
 awk '/^%build/{
   print "find . -type f -name \"config.h\" -exec sed -i \"s/#define LINUX_BACKPORT(__sym) intel_drm_shim_##__sym/#define LINUX_BACKPORT(__sym) __sym/g\" {} +"
