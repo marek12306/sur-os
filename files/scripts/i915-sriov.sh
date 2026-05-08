@@ -17,11 +17,11 @@ SHORT_COMMIT=${LATEST_COMMIT:0:7}
 
 sed -i "s/%global commit .*/%global commit $LATEST_COMMIT/" /root/rpmbuild/SPECS/*.spec
 sed -i "s/%global shortcommit .*/%global shortcommit $SHORT_COMMIT/" /root/rpmbuild/SPECS/*.spec
-sed -i '/Requires:.*-common/d' /root/rpmbuild/SPECS/*.spec
 
 spectool -g -R /root/rpmbuild/SPECS/*.spec
+rpmbuild -ba /root/rpmbuild/SPECS/*.spec
 
-rpmbuild -bs /root/rpmbuild/SPECS/*.spec
+dnf install -y /root/rpmbuild/RPMS/*/*.rpm --setopt=tsflags=noscripts
 
 mkdir -p /tmp/akmods-build
 cp /root/rpmbuild/SRPMS/*.src.rpm /tmp/akmods-build/
