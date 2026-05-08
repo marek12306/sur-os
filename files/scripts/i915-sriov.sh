@@ -18,7 +18,7 @@ spectool -g -R /root/rpmbuild/SPECS/*.spec
 
 rpmbuild -ba /root/rpmbuild/SPECS/*.spec
 
-dnf install -y /root/rpmbuild/RPMS/x86_64/i915-sriov-*.rpm /root/rpmbuild/RPMS/x86_64/akmod-i915-sriov-*.rpm --setopt=tsflags=noscripts
+dnf install -y /root/rpmbuild/RPMS/*/*.rpm --setopt=tsflags=noscripts
 
 mkdir -p /tmp/akmods-build
 cp /root/rpmbuild/SRPMS/*.src.rpm /tmp/akmods-build/
@@ -28,5 +28,6 @@ KERNEL_VERSION=$(ls /lib/modules | grep -E '^[0-9]\.' | head -n 1)
 
 cd /tmp/akmods-build
 su -s /bin/bash akmods -c "akmodsbuild --kernels ${KERNEL_VERSION} /tmp/akmods-build/*.src.rpm"
+
 dnf install -y /tmp/akmods-build/*.rpm
 
