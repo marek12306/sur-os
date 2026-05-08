@@ -17,6 +17,11 @@ SHORT_COMMIT=${LATEST_COMMIT:0:7}
 sed -i "s/%global commit .*/%global commit $LATEST_COMMIT/" /root/rpmbuild/SPECS/*.spec
 sed -i "s/%global shortcommit .*/%global shortcommit $SHORT_COMMIT/" /root/rpmbuild/SPECS/*.spec
 
+awk '/^%build/{
+  print "find . -type f -name \"config.h\" -exec sed -i \"s/#define LINUX_BACKPORT(__sym) intel_drm_shim_##__sym/#define LINUX_BACKPORT(__sym) __sym/g\" {} +"
+}1' /root/rpmbuild/SPECS/*.spec > /tmp/patched.spec
+mv /tmp/patched.spec /root/rpmbuild/SPECS/i915-sriov-kmod.spec
+
 spectool -g -R /root/rpmbuild/SPECS/*.spec
 rpmbuild -bs /root/rpmbuild/SPECS/*.spec
 
