@@ -12,16 +12,6 @@ modules:
       - source: system
         destination: /
 
-  - type: script
-    snippets:
-      - |
-        rpm-ostree override replace \
-        https://kojipkgs.fedoraproject.org//packages/kernel/7.0.3/200.fc44/x86_64/kernel-7.0.3-200.fc44.x86_64.rpm \
-        https://kojipkgs.fedoraproject.org//packages/kernel/7.0.3/200.fc44/x86_64/kernel-core-7.0.3-200.fc44.x86_64.rpm \
-        https://kojipkgs.fedoraproject.org//packages/kernel/7.0.3/200.fc44/x86_64/kernel-modules-7.0.3-200.fc44.x86_64.rpm \
-        https://kojipkgs.fedoraproject.org//packages/kernel/7.0.3/200.fc44/x86_64/kernel-modules-core-7.0.3-200.fc44.x86_64.rpm \
-        https://kojipkgs.fedoraproject.org//packages/kernel/7.0.3/200.fc44/x86_64/kernel-modules-extra-7.0.3-200.fc44.x86_64.rpm
-
   - type: dnf
     repos:
       copr:
