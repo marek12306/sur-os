@@ -107,12 +107,6 @@ modules:
   #   install:
   #     - v4l2loopback
   
-  # SOME EVIL WEIRD CLANKER HACKS AHEAD
-  # i hope ts works v5
-  - type: script
-    scripts:
-      - i915-sriov.sh
-  
   - type: fonts
     fonts:
       nerd-fonts:
