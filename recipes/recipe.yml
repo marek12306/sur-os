@@ -89,6 +89,7 @@ modules:
         - https://kojipkgs.fedoraproject.org//packages/squeekboard/1.43.1/8.fc43/x86_64/squeekboard-1.43.1-8.fc43.x86_64.rpm
         - glew
         - libinput-utils
+        - phosh
     remove:
       packages:
         - firefox
