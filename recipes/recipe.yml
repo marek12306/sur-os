@@ -17,6 +17,7 @@ modules:
       copr:
         - atim/starship
         - bieszczaders/kernel-cachyos-addons
+        - bieszczaders/kernel-cachyos
         - yalter/niri
         - ulysg/xwayland-satellite
         - erikreider/SwayNotificationCenter
@@ -46,6 +47,7 @@ modules:
         - python3-pip
         - tailscale
         # - scx-scheds
+        - kernel-cachyos
         - podman-docker
         - gnome-shell-extension-appindicator
         - gnome-shell-extension-gsconnect
