@@ -94,11 +94,10 @@ modules:
       packages:
         - firefox
         - firefox-langpacks
-    replace:
-      - from-repo: copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos
-        packages:
-          - old: kernel
-            new: kernel-cachyos
+
+  - type: script
+    snippets:
+      - rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos
 
   - type: dnf
     install:
