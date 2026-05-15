@@ -47,7 +47,6 @@ modules:
         - python3-pip
         - tailscale
         # - scx-scheds
-        - kernel-cachyos
         - podman-docker
         - gnome-shell-extension-appindicator
         - gnome-shell-extension-gsconnect
@@ -95,6 +94,11 @@ modules:
       packages:
         - firefox
         - firefox-langpacks
+    replace:
+      - from-repo: copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos
+        packages:
+          - old: kernel
+            new: kernel-cachyos
 
   - type: dnf
     install:
