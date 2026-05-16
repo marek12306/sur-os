@@ -46,7 +46,8 @@ modules:
         - yt-dlp
         - python3-pip
         - tailscale
-        # - scx-scheds
+        - scx-scheds
+        - scx-tools
         - podman-docker
         - gnome-shell-extension-appindicator
         - gnome-shell-extension-gsconnect
