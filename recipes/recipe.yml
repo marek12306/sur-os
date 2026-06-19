@@ -100,6 +100,7 @@ modules:
   - type: script
     scripts:
       - kernel-cachyos.sh
+      - install-linux-3-finger-drag.sh
 
   - type: dnf
     install:
