@@ -132,6 +132,23 @@ modules:
       enabled:
         - podman.service
 
+  # https://github.com/alexandregv/bluebuild-images
+  - type: systemd
+    system:
+      enabled:
+        - nix.mount
+
+  - type: dnf
+    install:
+      packages:
+        - nix
+        - nix-daemon # nix multi-user/systemd install
+
+  - type: systemd
+    system:
+      enabled:
+        - nix-daemon
+
   - type: default-flatpaks
     configurations:
       - scope: system
