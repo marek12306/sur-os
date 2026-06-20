@@ -6,7 +6,7 @@ echo "Installing linux-3-finger-drag..."
 # Install build dependencies
 dnf install -y cargo rust git gcc libinput-devel
 
-git clone https://github.com/lmr97/linux-3-finger-drag.git /tmp/linux-3-finger-drag
+git clone https://github.com/R3-da/linux-3-finger-drag.git -b "fix/accumulate-subpixel-motion" /tmp/linux-3-finger-drag
 cd /tmp/linux-3-finger-drag
 
 cargo build --release
