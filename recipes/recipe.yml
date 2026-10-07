@@ -28,6 +28,7 @@ modules:
         - marek12306/soteria
         - marek12306/ashell
         - marek12306/applaunch
+        - aneagle/gnome-rounded-blur
       nonfree: rpmfusion
       files:
         # - netbird.repo
@@ -92,6 +93,7 @@ modules:
         - glew
         - libinput-utils
         - realtime-setup
+        - gnome-rounded-blur
     remove:
       packages:
         - firefox
